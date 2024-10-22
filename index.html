@@ -13,25 +13,24 @@
 
   <link rel="stylesheet" href="css/styles.css">
 
-  <title>Portfólio | Rhuan Lucas</title>
+  <title>Portfolio | Rhuan Lucas</title>
 
+  <script src="js/svg-inject.min.js"></script>
 </head>
 
 <body>
   <!-- HEADER -->
   <header id="header">
-    <!-- NAVBAR MOBILE -->
-    <nav class="navbar-mobile">
-      <div class="logo"></div>
-      <div class="bx" id="bx"></div>
-    </nav>
-
-    <!-- NAVBAR DESKTOP -->
-    <nav class="navbar-desktop">
-      <div class="logo"></div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo"><img src="assets/svg/logo.svg"
+          alt="Logo with the letters R and L joined together representing the initials of Rhuan Lucas"
+          onload="SVGInject(this)"></div>
       <div class="navbar-item">
+        <div class="menu-mobile" id="menu-mobile"></div>
+
         <ul class="menu-desktop">
-          <li class="menu-item"><a href="" class="nav-link-desktop">Home</a></li>
+          <li class="menu-item"><a href="" class="nav-link-desktop active-menu">Home</a></li>
           <li class="menu-item"><a href="" class="nav-link-desktop">Works</a></li>
           <li class="menu-item"><a href="" class="nav-link-desktop">About</a></li>
           <li class="menu-item"><a href="" class="nav-link-desktop">Contact</a></li>
