@@ -1,0 +1,26 @@
+a {
+  @include typefaceBody(p2, desktop);
+  text-decoration: none;
+  color: $primary-light;
+  transition: .3s ease;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.navbar-desktop {
+  display: block;
+
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  display: none;
+
+  @include responsive(s) {
+    display: block;
+  }
+}

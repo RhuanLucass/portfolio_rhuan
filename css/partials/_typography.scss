@@ -1,0 +1,130 @@
+// Typography of project
+
+@mixin typefaceTitle($size, $device: desktop) {
+  font-family: "Viaoda Libre", serif;
+
+  // H1
+  @if $size ==h1 and $device ==desktop {
+    font-size: 162px;
+    line-height: 100%;
+  }
+
+  @else if $size ==h1 and $device ==mobile {
+    font-size: 100px;
+    line-height: 100%;
+  }
+
+  // H2
+  @if $size ==h2 and $device ==desktop {
+    font-size: 162px;
+    line-height: 100%;
+  }
+
+  @else if $size ==h2 and $device ==mobile {
+    font-size: 162px;
+    line-height: 100%;
+  }
+
+  // H3
+  @if $size ==h3 and $device ==desktop {
+    font-size: 72px;
+    line-height: 100%;
+  }
+
+  @else if $size ==h3 and $device ==mobile {
+    font-size: 40px;
+    line-height: 100%;
+  }
+}
+
+@mixin typefaceBody($size: p2, $device: desktop) {
+  font-family: "Roboto", sans-serif;
+
+  // P1
+  @if $size ==p1 and $device ==desktop {
+    font-size: 32px;
+    line-height: 150%;
+  }
+
+  @else if $size ==p1 and $device ==mobile {
+    font-size: 32px;
+    line-height: 150%;
+  }
+
+  // P2
+  @if $size ==p2 and $device ==desktop {
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  @else if $size ==p2 and $device ==mobile {
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  // P3
+  @if $size ==p3 and $device ==desktop {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  @else if $size ==p3 and $device ==mobile {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+// Highlights
+h1 {
+  color: $white-light;
+  @include typefaceTitle(h1, desktop);
+
+  @include responsive(s) {
+    @include typefaceTitle(h1, mobile);
+  }
+}
+
+h2 {
+  color: $white-light;
+  @include typefaceTitle(h2, desktop);
+
+  @include responsive(s) {
+    @include typefaceTitle(h2, mobile);
+  }
+}
+
+h3 {
+  color: $white-light;
+  @include typefaceTitle(h3, desktop);
+
+  @include responsive(s) {
+    @include typefaceTitle(h3, mobile);
+  }
+}
+
+
+// Body
+p {
+  color: $white-normal;
+  @include typefaceBody(p2, desktop);
+
+  @include responsive(s) {
+    @include typefaceBody(p2, mobile);
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+strong {
+  @include typefaceBody(p2, desktop);
+
+  @include responsive(s) {
+    @include typefaceBody(p2, mobile);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
