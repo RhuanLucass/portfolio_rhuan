@@ -10,15 +10,44 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 1900px;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+.hero {
+  padding-top: 12.8rem;
+  padding-bottom: 11.2rem;
+  height: 100vh;
+  max-height: 1080px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.main-item-1 {
+  padding-right: 8rem;
+  align-self: flex-end;
+}
+
+.main-item-2 {
+  padding-left: 8rem;
+  align-self: flex-start;
+}
+
 h1 {
   color: #FCFDFF;
   font-family: "Viaoda Libre", serif;
-  font-size: 16.2rem;
+  font-weight: 400;
+  font-size: 15.4rem;
   line-height: 100%;
 }
 @media screen and (max-width: 960px) {
   h1 {
     font-family: "Viaoda Libre", serif;
+    font-weight: 400;
     font-size: 10rem;
     line-height: 100%;
   }
@@ -27,12 +56,14 @@ h1 {
 h2 {
   color: #FCFDFF;
   font-family: "Viaoda Libre", serif;
-  font-size: 16.2rem;
+  font-weight: 400;
+  font-size: 15.4rem;
   line-height: 100%;
 }
 @media screen and (max-width: 960px) {
   h2 {
     font-family: "Viaoda Libre", serif;
+    font-weight: 400;
     font-size: 16.2rem;
     line-height: 100%;
   }
@@ -41,12 +72,14 @@ h2 {
 h3 {
   color: #FCFDFF;
   font-family: "Viaoda Libre", serif;
-  font-size: 7.2rem;
+  font-weight: 400;
+  font-size: 3.2rem;
   line-height: 100%;
 }
 @media screen and (max-width: 960px) {
   h3 {
     font-family: "Viaoda Libre", serif;
+    font-weight: 400;
     font-size: 4rem;
     line-height: 100%;
   }
@@ -125,7 +158,7 @@ header {
   width: 100%;
   background-color: transparent;
   box-shadow: none;
-  transition: 0.5s ease;
+  transition: 0.2s ease;
   position: fixed;
   z-index: 900;
 }
@@ -192,9 +225,35 @@ header.active-header {
 
 .menu-mobile {
   display: none;
+  width: 4.8rem;
+  height: 4.8rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.menu-mobile > span {
+  width: 100%;
+  height: 4px;
+  background-color: #FCFDFF;
+  position: relative;
+  border-radius: 4px;
+}
+.menu-mobile > span::after, .menu-mobile > span::before {
+  content: "";
+  width: 4.8rem;
+  height: 4px;
+  background-color: #FCFDFF;
+  position: absolute;
+  border-radius: 4px;
+}
+.menu-mobile > span::after {
+  bottom: 1.2rem;
+}
+.menu-mobile > span::before {
+  top: 1.2rem;
 }
 @media screen and (max-width: 960px) {
   .menu-mobile {
-    display: block;
+    display: flex;
   }
 }/*# sourceMappingURL=styles.css.map */

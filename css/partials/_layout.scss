@@ -1,6 +1,7 @@
 // Layout of project
 
 // Container devices
+$container-xxl: 1900px;
 $container-xl: 1440px;
 $container-l: 1140px;
 $container-m: 960px;
@@ -47,4 +48,36 @@ $container-s: 540px;
       @content;
     }
   }
+}
+
+.container {
+  width: $container-xxl;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+
+// MAIN
+
+.hero {
+  padding-top: 12.8rem;
+  padding-bottom: 11.2rem;
+  // width: 100%;
+  height: 100vh;
+  max-height: 1080px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.main-item-1 {
+  padding-right: 8rem;
+  align-self: flex-end;
+}
+
+.main-item-2 {
+  padding-left: 8rem;
+  align-self: flex-start;
 }

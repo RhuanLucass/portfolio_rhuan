@@ -2,10 +2,11 @@
 
 @mixin typefaceTitle($size, $device: desktop) {
   font-family: "Viaoda Libre", serif;
+  font-weight: 400;
 
   // H1
   @if $size ==h1 and $device ==desktop {
-    font-size: 16.2rem;
+    font-size: 15.4rem;
     line-height: 100%;
   }
 
@@ -16,7 +17,7 @@
 
   // H2
   @if $size ==h2 and $device ==desktop {
-    font-size: 16.2rem;
+    font-size: 15.4rem;
     line-height: 100%;
   }
 
@@ -27,7 +28,7 @@
 
   // H3
   @if $size ==h3 and $device ==desktop {
-    font-size: 7.2rem;
+    font-size: 3.2rem;
     line-height: 100%;
   }
 
