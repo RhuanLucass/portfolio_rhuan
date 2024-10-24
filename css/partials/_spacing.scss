@@ -1,0 +1,152 @@
+// Definição dos gaps
+$gap-0: .4rem;
+$gap-1: .8rem;
+$gap-2: 1.6rem;
+$gap-3: 2.4rem;
+$gap-4: 3.2rem;
+$gap-5: 4.8rem;
+$gap-6: 4rem;
+$gap-7: 8rem;
+
+// Mixin para spacing (margins e paddings)
+@mixin spacing($type, $num) {
+  $gap: map-get((0: $gap-0,
+        1: $gap-1,
+        2: $gap-2,
+        3: $gap-3,
+        4: $gap-4,
+        5: $gap-5,
+        6: $gap-7 ), $num);
+
+  @if $type =='m' {
+    margin: $gap;
+  }
+
+  @else if $type =='p' {
+    padding: $gap;
+  }
+
+  @else if $type =='mt' {
+    margin-top: $gap;
+  }
+
+  @else if $type =='mb' {
+    margin-bottom: $gap;
+  }
+
+  @else if $type =='ml' {
+    margin-left: $gap;
+  }
+
+  @else if $type =='mr' {
+    margin-right: $gap;
+  }
+
+  @else if $type =='pt' {
+    padding-top: $gap;
+  }
+
+  @else if $type =='pb' {
+    padding-bottom: $gap;
+  }
+
+  @else if $type =='pl' {
+    padding-left: $gap;
+  }
+
+  @else if $type =='pr' {
+    padding-right: $gap;
+  }
+
+  @else if $type =='mx' {
+    margin-left: $gap;
+    margin-right: $gap;
+  }
+
+  @else if $type =='my' {
+    margin-top: $gap;
+    margin-bottom: $gap;
+  }
+
+  @else if $type =='px' {
+    padding-left: $gap;
+    padding-right: $gap;
+  }
+
+  @else if $type =='py' {
+    padding-top: $gap;
+    padding-bottom: $gap;
+  }
+
+  @include responsive(l) {
+    @if $num >0 {
+      $responsive-gap: map-get((0: $gap-0,
+            1: $gap-0,
+            2: $gap-1,
+            3: $gap-2,
+            4: $gap-3,
+            5: $gap-4,
+            6: $gap-6), $num);
+
+      @if $type =='m' {
+        margin: $responsive-gap;
+      }
+
+      @else if $type =='p' {
+        padding: $responsive-gap;
+      }
+
+      @else if $type =='mt' {
+        margin-top: $responsive-gap;
+      }
+
+      @else if $type =='mb' {
+        margin-bottom: $responsive-gap;
+      }
+
+      @else if $type =='ml' {
+        margin-left: $responsive-gap;
+      }
+
+      @else if $type =='mr' {
+        margin-right: $responsive-gap;
+      }
+
+      @else if $type =='pt' {
+        padding-top: $responsive-gap;
+      }
+
+      @else if $type =='pb' {
+        padding-bottom: $responsive-gap;
+      }
+
+      @else if $type =='pl' {
+        padding-left: $responsive-gap;
+      }
+
+      @else if $type =='pr' {
+        padding-right: $responsive-gap;
+      }
+
+      @else if $type =='mx' {
+        margin-left: $responsive-gap;
+        margin-right: $responsive-gap;
+      }
+
+      @else if $type =='my' {
+        margin-top: $responsive-gap;
+        margin-bottom: $responsive-gap;
+      }
+
+      @else if $type =='px' {
+        padding-left: $responsive-gap;
+        padding-right: $responsive-gap;
+      }
+
+      @else if $type =='py' {
+        padding-top: $responsive-gap;
+        padding-bottom: $responsive-gap;
+      }
+    }
+  }
+}

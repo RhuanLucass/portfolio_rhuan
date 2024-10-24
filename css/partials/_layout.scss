@@ -54,7 +54,9 @@ $container-s: 540px;
   width: 100%;
   max-width: $container-xxl;
   margin: 0 auto;
-  padding: 0 2.4rem;
+  @include spacing(px, 4);
+
+  @include responsive(s) {}
 }
 
 
@@ -63,7 +65,6 @@ $container-s: 540px;
 .hero {
   padding-top: 12.8rem;
   padding-bottom: 11.2rem;
-  // width: 100%;
   height: 100vh;
   max-height: 1080px;
 
@@ -72,15 +73,27 @@ $container-s: 540px;
   justify-content: space-between;
   flex-direction: column;
 
-  @include responsive(l) {}
+  h3 {
+    line-height: 0%;
+    padding-left: .6rem;
+
+    @include responsive(l) {
+      padding-left: .3rem;
+    }
+  }
+
+  @include responsive(l) {
+    padding-top: 8.8rem;
+    padding-bottom: 4.8rem;
+  }
 }
 
 .main-item-1 {
-  padding-right: 8rem;
+  @include spacing(pr, 6);
   align-self: flex-end;
 }
 
 .main-item-2 {
-  padding-left: 8rem;
+  @include spacing(pl, 6);
   align-self: flex-start;
 }

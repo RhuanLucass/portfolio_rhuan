@@ -1,5 +1,6 @@
 header {
   width: 100%;
+  min-height: 4.8rem;
   background-color: transparent;
   box-shadow: none;
   transition: .2s ease;
@@ -14,8 +15,7 @@ header {
 
   @include responsive(l) {
     &.active-header {
-      background-color: $black-dark;
-      box-shadow: 0px 0px 60px -25px rgba(153, 183, 205, 0.90);
+      box-shadow: 0px 10px 40px -20px rgba(153, 183, 205, 0.90);
     }
   }
 }
@@ -23,7 +23,7 @@ header {
 .navbar {
   max-width: $container-xl;
   margin: 0 auto;
-  padding: 1.6rem;
+  @include spacing(p, 2);
 
   display: flex;
   align-items: center;
@@ -66,7 +66,8 @@ header {
     li a {
       display: inline-block;
       width: 100%;
-      padding: .8rem;
+      @include spacing(p, 1);
+
 
       &.active-menu {
         color: $white-light;
@@ -112,8 +113,6 @@ header {
 
       flex-direction: column;
       gap: 1.6rem;
-
-      z-index: 800;
 
       li {
         width: 100%;
