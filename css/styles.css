@@ -11,7 +11,8 @@
 }
 
 .container {
-  width: 1900px;
+  width: 100%;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 0 2.4rem;
 }
@@ -26,7 +27,6 @@
   justify-content: space-between;
   flex-direction: column;
 }
-
 .main-item-1 {
   padding-right: 8rem;
   align-self: flex-end;
@@ -41,14 +41,22 @@ h1 {
   color: #FCFDFF;
   font-family: "Viaoda Libre", serif;
   font-weight: 400;
-  font-size: 15.4rem;
+  font-size: 15.2em;
   line-height: 100%;
+}
+@media screen and (max-width: 1440px) {
+  h1 {
+    font-family: "Viaoda Libre", serif;
+    font-weight: 400;
+    font-size: 12.8rem;
+    line-height: 100%;
+  }
 }
 @media screen and (max-width: 960px) {
   h1 {
     font-family: "Viaoda Libre", serif;
     font-weight: 400;
-    font-size: 10rem;
+    font-size: 9.6rem;
     line-height: 100%;
   }
 }
@@ -57,14 +65,22 @@ h2 {
   color: #FCFDFF;
   font-family: "Viaoda Libre", serif;
   font-weight: 400;
-  font-size: 15.4rem;
+  font-size: 14.4rem;
   line-height: 100%;
+}
+@media screen and (max-width: 1440px) {
+  h2 {
+    font-family: "Viaoda Libre", serif;
+    font-weight: 400;
+    font-size: 12rem;
+    line-height: 100%;
+  }
 }
 @media screen and (max-width: 960px) {
   h2 {
     font-family: "Viaoda Libre", serif;
     font-weight: 400;
-    font-size: 16.2rem;
+    font-size: 8rem;
     line-height: 100%;
   }
 }
@@ -76,11 +92,19 @@ h3 {
   font-size: 3.2rem;
   line-height: 100%;
 }
+@media screen and (max-width: 1440px) {
+  h3 {
+    font-family: "Viaoda Libre", serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 100%;
+  }
+}
 @media screen and (max-width: 960px) {
   h3 {
     font-family: "Viaoda Libre", serif;
     font-weight: 400;
-    font-size: 4rem;
+    font-size: 1.6rem;
     line-height: 100%;
   }
 }
@@ -88,13 +112,20 @@ h3 {
 p {
   color: #EFF5FD;
   font-family: "Roboto", sans-serif;
-  font-size: 2.3rem;
+  font-size: 2.4rem;
   line-height: 150%;
+}
+@media screen and (max-width: 1440px) {
+  p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
 }
 @media screen and (max-width: 960px) {
   p {
     font-family: "Roboto", sans-serif;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     line-height: 150%;
   }
 }
@@ -105,13 +136,20 @@ p {
 
 strong {
   font-family: "Roboto", sans-serif;
-  font-size: 2.3rem;
+  font-size: 2.4rem;
   line-height: 150%;
+}
+@media screen and (max-width: 1440px) {
+  strong {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
 }
 @media screen and (max-width: 960px) {
   strong {
     font-family: "Roboto", sans-serif;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     line-height: 150%;
   }
 }
@@ -130,6 +168,20 @@ a {
 }
 a:hover {
   opacity: 0.7;
+}
+@media screen and (max-width: 1440px) {
+  a {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
+}
+@media screen and (max-width: 960px) {
+  a {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.4rem;
+    line-height: 150%;
+  }
 }
 
 html {
@@ -166,6 +218,12 @@ header.active-header {
   background-color: #010E1E;
   box-shadow: 0px 0px 60px -30px rgba(153, 183, 205, 0.9);
 }
+@media screen and (max-width: 1440px) {
+  header.active-header {
+    background-color: #010E1E;
+    box-shadow: 0px 0px 60px -25px rgba(153, 183, 205, 0.9);
+  }
+}
 
 .navbar {
   max-width: 1440px;
@@ -174,6 +232,7 @@ header.active-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -184,76 +243,143 @@ header.active-header {
   justify-content: center;
 }
 .logo > svg {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+@media screen and (max-width: 1440px) {
+  .logo {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
 }
 
 .menu-desktop {
-  display: block;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4.8em;
+}
+.menu-desktop ul {
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
   list-style-type: none;
 }
-.menu-desktop li a {
+.menu-desktop ul li a {
+  display: inline-block;
+  width: 100%;
   padding: 0.8rem;
 }
-.menu-desktop li a.active-menu {
+.menu-desktop ul li a.active-menu {
   color: #FCFDFF;
   font-weight: bold;
+}
+.menu-desktop ul li a.active-menu > span {
   position: relative;
 }
-.menu-desktop li a.active-menu::after {
+.menu-desktop ul li a.active-menu > span::after {
   content: "";
-  width: 75%;
+  width: 100%;
   height: 2px;
   background-color: #FCFDFF;
   position: absolute;
-  bottom: 0.6rem;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%);
 }
-.menu-desktop li a.active-menu:hover {
+.menu-desktop ul li a.active-menu:hover {
   opacity: 1;
 }
 @media screen and (max-width: 960px) {
   .menu-desktop {
-    display: none;
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 6.4rem;
+    right: 0;
+    background-color: #010E1E;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  .menu-desktop ul {
+    width: 100%;
+    margin-top: -6.4rem;
+    flex-direction: column;
+    gap: 1.6rem;
+    z-index: 800;
+  }
+  .menu-desktop ul li {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .menu-desktop ul li:nth-of-type(2) {
+    transition-delay: 0.2s;
+  }
+  .menu-desktop ul li:nth-of-type(3) {
+    transition-delay: 0.4s;
+  }
+  .menu-desktop ul li:nth-of-type(4) {
+    transition-delay: 0.6s;
+  }
+  .menu-desktop.active-menu-mobile {
+    pointer-events: visible;
+    opacity: 1;
+    width: 100%;
+  }
+  .menu-desktop.active-menu-mobile ul li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .menu-desktop:not(.active-menu-mobile) ul li {
+    opacity: 0;
+    transform: translateX(50px);
+    transition-delay: 0s;
   }
 }
 
 .menu-mobile {
   display: none;
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 .menu-mobile > span {
   width: 100%;
-  height: 4px;
-  background-color: #FCFDFF;
   position: relative;
-  border-radius: 4px;
 }
-.menu-mobile > span::after, .menu-mobile > span::before {
+.menu-mobile > span::before, .menu-mobile > span::after {
   content: "";
-  width: 4.8rem;
-  height: 4px;
+  width: 80%;
+  height: 2px;
   background-color: #FCFDFF;
   position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   border-radius: 4px;
-}
-.menu-mobile > span::after {
-  bottom: 1.2rem;
+  transition: 0.5s ease;
 }
 .menu-mobile > span::before {
-  top: 1.2rem;
+  bottom: 0.4rem;
+}
+.menu-mobile > span::after {
+  top: 0.4rem;
 }
 @media screen and (max-width: 960px) {
   .menu-mobile {
     display: flex;
   }
+}
+
+span.toggle-button-menu::before {
+  bottom: -1px;
+  transform: translate(-50%) rotate(-135deg);
+}
+span.toggle-button-menu::after {
+  top: -1px;
+  transform: translate(-50%) rotate(-45deg);
 }/*# sourceMappingURL=styles.css.map */

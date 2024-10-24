@@ -7,4 +7,12 @@ a {
   &:hover {
     opacity: .7;
   }
+
+  @include responsive(l) {
+    @include typefaceBody(p3, laptop);
+  }
+
+  @include responsive(s) {
+    @include typefaceBody(p2, desktop);
+  }
 }

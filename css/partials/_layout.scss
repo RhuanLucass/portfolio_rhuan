@@ -19,19 +19,19 @@ $container-s: 540px;
 
   @else if $device ==l {
 
-    // For resolutions between 1140px and 1440px
-    @media screen and (max-width: $container-xl) and (min-width: $container-l) {
+    // For resolutions less 1440px
+    @media screen and (max-width: $container-xl) {
       @content;
     }
   }
 
-  @else if $device ==m {
+  // @else if $device ==m {
 
-    // For resolutions between 960px and 1140px
-    @media screen and (max-width: $container-l) and (min-width: $container-m) {
-      @content;
-    }
-  }
+  //   // For resolutions between 960px and 1140px
+  //   @media screen and (max-width: $container-l) and (min-width: $container-m) {
+  //     @content;
+  //   }
+  // }
 
   @else if $device ==s {
 
@@ -41,17 +41,18 @@ $container-s: 540px;
     }
   }
 
-  @else if $device ==xs {
+  // @else if $device ==xs {
 
-    // For resolutions less than 540px
-    @media screen and (max-width: $container-s) {
-      @content;
-    }
-  }
+  //   // For resolutions less than 540px
+  //   @media screen and (max-width: $container-s) {
+  //     @content;
+  //   }
+  // }
 }
 
 .container {
-  width: $container-xxl;
+  width: 100%;
+  max-width: $container-xxl;
   margin: 0 auto;
   padding: 0 2.4rem;
 }
@@ -70,6 +71,8 @@ $container-s: 540px;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+
+  @include responsive(l) {}
 }
 
 .main-item-1 {
