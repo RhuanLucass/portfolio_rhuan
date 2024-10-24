@@ -1,11 +1,11 @@
 header {
   width: 100%;
-  min-height: 4.8rem;
   background-color: transparent;
   box-shadow: none;
   transition: .2s ease;
 
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 900;
 
   &.active-header {
@@ -49,6 +49,10 @@ header {
     width: 3.2rem;
     height: 3.2rem;
   }
+
+  // @include responsive(s) {
+  //   max-width: none;
+  // }
 }
 
 .menu-desktop {
