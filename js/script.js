@@ -1,3 +1,14 @@
+// Setting fixed main height on page load
+function setFixedMainHeight() {
+  const main = document.querySelector('main');
+  main.style.height = `${window.innerHeight}px`;
+}
+
+window.addEventListener('load', setFixedMainHeight);
+window.addEventListener('load', setFixedMainHeight);
+
+
+// Active header on scroll
 scrollHeader = () => {
   const nav = document.getElementById('header')
 
