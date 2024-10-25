@@ -4,8 +4,7 @@ header {
   box-shadow: none;
   transition: .2s ease;
 
-  position: sticky;
-  top: 0;
+  position: fixed;
   z-index: 900;
 
   &.active-header {
@@ -30,6 +29,10 @@ header {
   justify-content: space-between;
 
   position: relative;
+
+  @include responsive(s) {
+    padding: 2.4rem;
+  }
 }
 
 .logo {
@@ -49,10 +52,6 @@ header {
     width: 3.2rem;
     height: 3.2rem;
   }
-
-  // @include responsive(s) {
-  //   max-width: none;
-  // }
 }
 
 .menu-desktop {

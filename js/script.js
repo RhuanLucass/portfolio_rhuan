@@ -1,11 +1,20 @@
-// Setting fixed main height on page load
+// // Setting fixed main height on page load
 function setFixedMainHeight() {
-  const main = document.querySelector('main');
-  main.style.height = `${window.innerHeight}px`;
+  const main = document.querySelector('main')
+  main.style.height = `${window.innerHeight}px`
 }
 
-window.addEventListener('load', setFixedMainHeight);
-window.addEventListener('load', setFixedMainHeight);
+function setFixedMainHeightResize() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  if(!isTouchDevice){
+    setFixedMainHeight()
+  }
+  setFixedMainHeight()
+}
+
+window.addEventListener('load', setFixedMainHeight)
+window.addEventListener('resize', setFixedMainHeightResize)
+window.addEventListener('orientationchange', setFixedMainHeight);
 
 
 // Active header on scroll

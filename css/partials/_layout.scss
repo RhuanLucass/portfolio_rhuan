@@ -4,7 +4,7 @@
 $container-xxl: 1900px;
 $container-xl: 1440px;
 $container-l: 1140px;
-$container-m: 960px;
+$container-m: 768px;
 $container-s: 540px;
 
 // Mixins
@@ -62,42 +62,39 @@ $container-s: 540px;
 // MAIN
 
 .hero {
-  padding-top: 12.8rem;
-  padding-bottom: 11.2rem;
+  padding: 10vh 0 5vh;
   height: 100vh;
   max-height: 1080px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
+  gap: 20vh;
+
 
   h3 {
     line-height: 0%;
     padding-left: .6rem;
+  }
 
-    @include responsive(l) {
-      padding-left: .3rem;
+  @include responsive(l) {
+    h3 {
+      padding-left: .4rem;
     }
+  }
 
-    @include responsive(s) {
+  @include responsive(s) {
+    max-height: 95vh;
+    padding: 10vh 2.4rem 5vh;
+
+    h3 {
       line-height: 35%;
 
       &.h3-name {
         line-height: 15%;
       }
     }
-  }
-
-  @include responsive(l) {
-    padding-top: 8.8rem;
-    padding-bottom: 4.8rem;
-  }
-
-  @include responsive(s) {
-    max-height: 95vh;
-    padding-top: 5.6rem;
-    padding-bottom: 5.6rem;
   }
 }
 
@@ -121,6 +118,5 @@ $container-s: 540px;
 
   @include responsive(s) {
     padding-left: 0;
-    margin-bottom: 40%;
   }
 }

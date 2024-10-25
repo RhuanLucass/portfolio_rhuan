@@ -1,54 +1,24 @@
 // Typography of project
 
-@mixin typefaceTitle($size, $device: desktop) {
+@mixin typefaceTitle($size) {
   font-family: "Viaoda Libre", serif;
   font-weight: 400;
 
   // H1
-  @if $size ==h1 and $device ==desktop {
-    font-size: 15.2em;
-    line-height: 100%;
-  }
-
-  @else if $size ==h1 and $device ==laptop {
-    font-size: 10.4rem;
-    line-height: 100%;
-  }
-
-  @else if $size ==h1 and $device ==mobile {
-    font-size: 8rem;
+  @if $size ==h1 {
+    font-size: clamp(8rem, 8vw + 1rem, 15.2em);
     line-height: 100%;
   }
 
   // H2
-  @if $size ==h2 and $device ==desktop {
-    font-size: 14.4rem;
-    line-height: 100%;
-  }
-
-  @else if $size ==h2 and $device ==laptop {
-    font-size: 9.6rem;
-    line-height: 100%;
-  }
-
-  @else if $size ==h2 and $device ==mobile {
-    font-size: 5.6rem;
+  @if $size ==h2 {
+    font-size: clamp(5.6rem, 6vw + 1rem, 14.4em);
     line-height: 100%;
   }
 
   // H3
-  @if $size ==h3 and $device ==desktop {
-    font-size: 3.2rem;
-    line-height: 100%;
-  }
-
-  @else if $size ==h3 and $device ==laptop {
-    font-size: 2.4rem;
-    line-height: 100%;
-  }
-
-  @else if $size ==h3 and $device ==mobile {
-    font-size: 2.4rem;
+  @if $size ==h3 {
+    font-size: clamp(2.4rem, 1.5vw + .5rem, 3.2em);
     line-height: 100%;
   }
 }
@@ -110,41 +80,17 @@
 // Highlights
 h1 {
   color: $white-light;
-  @include typefaceTitle(h1, desktop);
-
-  @include responsive(l) {
-    @include typefaceTitle(h1, laptop)
-  }
-
-  @include responsive(s) {
-    @include typefaceTitle(h1, mobile);
-  }
+  @include typefaceTitle(h1);
 }
 
 h2 {
   color: $white-light;
-  @include typefaceTitle(h2, desktop);
-
-  @include responsive(l) {
-    @include typefaceTitle(h2, laptop);
-  }
-
-  @include responsive(s) {
-    @include typefaceTitle(h2, mobile);
-  }
+  @include typefaceTitle(h2);
 }
 
 h3 {
   color: $white-light;
-  @include typefaceTitle(h3, desktop);
-
-  @include responsive(l) {
-    @include typefaceTitle(h3, laptop);
-  }
-
-  @include responsive(s) {
-    @include typefaceTitle(h3, mobile);
-  }
+  @include typefaceTitle(h3);
 }
 
 
