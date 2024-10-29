@@ -33,6 +33,7 @@
   justify-content: space-around;
   flex-direction: column;
   gap: 20vh;
+  position: relative;
 }
 .hero h3 {
   line-height: 0%;
@@ -198,7 +199,17 @@ body {
   height: 100vh;
   position: relative;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   background-color: #010E1E;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
 }
 
 svg,
@@ -245,7 +256,7 @@ header.active-header {
 }
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 2.4rem;
+    padding: 1.6rem;
   }
 }
 
