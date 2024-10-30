@@ -57,6 +57,10 @@
   }
 }
 
+.main-text {
+  cursor: default;
+}
+
 .main-item-1 {
   padding-right: 8rem;
   align-self: flex-end;
@@ -226,7 +230,6 @@ header {
   width: 100%;
   background-color: transparent;
   box-shadow: none;
-  transition: 0.2s ease;
   position: fixed;
   z-index: 900;
 }

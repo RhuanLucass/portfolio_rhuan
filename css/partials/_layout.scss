@@ -100,7 +100,14 @@ $container-s: 540px;
   }
 }
 
+
+.main-text {
+  cursor: default;
+}
+
 .main-item-1 {
+  // opacity: 1;
+
   @include spacing(pr, 6);
   align-self: flex-end;
 
