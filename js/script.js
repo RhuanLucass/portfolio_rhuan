@@ -7,9 +7,36 @@ window.addEventListener('DOMContentLoaded', function () {
   // })
 
   // Main text animation gsap
+  // Function to prevent default events
+  const preventScroll = (e) => {
+    e.preventDefault()
+  }
+
+  // Function to disable scroll events
+  const disableScroll = () => {
+    window.addEventListener('wheel', preventScroll, { passive: false }); // Mouse wheel event
+    window.addEventListener('touchmove', preventScroll, { passive: false });  // Touch events
+    window.addEventListener('keydown', preventScroll, { passive: false }); // Keyboard down events
+    // Events considered passive normally do not accept code interference, so it is necessary to disable it
+  }
+
+  // Function to enable scroll events
+  const enableScroll = () => {
+    window.removeEventListener('wheel', preventScroll);
+    window.removeEventListener('touchmove', preventScroll);
+    window.removeEventListener('keydown', preventScroll);
+  }
+
+  // Create the gsap timeline
+  const tl = gsap.timeline({
+    onStart: disableScroll, // Disable scroll events on start
+    onComplete: enableScroll // Enable scroll events on complete
+  })
+
   const header = document.querySelector('header')
-  const mainText1 = document.querySelector('.main-item-1 h3')
-  const mainText2 = document.querySelector('.main-item-2')
+  const h3Text1 = document.querySelector('.main-item-1 h3')
+  const h3Text2 = document.querySelector('.main-item-2 h3')
+  const h2Text2 = document.querySelectorAll('.main-item-2 h2')
 
   const nameText = document.getElementById('name')
   const textContent = nameText.textContent;
@@ -19,42 +46,51 @@ window.addEventListener('DOMContentLoaded', function () {
   }).join("");
 
 
-  gsap.from(header, {
-    duration: 1,     // Duração da animação em segundos
-    y: -100,            // Deslocamento vertical inicial
-    opacity: 0,        // Começa invisível
+  tl.fromTo(header, 1, {
+    y: -100,
+    opacity: 0,
+  }, {
+    y: 0,
+    opacity: 1,
     ease: "power2.out"
   })
-
-  gsap.from(mainText1, {
-    duration: 2,     // Duração da animação em segundos
-    x: 100,            // Deslocamento vertical inicial
-    opacity: 0,        // Começa invisível
-    delay: .8,
-    ease: "power2.out"
-  })
-
-  // Anima cada letra individualmente
-  gsap.fromTo(
-    "#name span",          // Seleciona cada span criado
-    { opacity: 0, x: 60 }, // Estado inicial: opacidade zero e deslocamento para baixo
-    {
+    .fromTo(h3Text1, 2, {
+      x: 100,
+      opacity: 0
+    }, {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out"
+    }, "-=.4")
+    // Animate each letter individually
+    .fromTo("#name span", 1.3,           // Select each created span
+      {                  // initial state: zero opacity and down shift
+        opacity: 0,
+        x: 60
+      }, {
       opacity: 1,
       x: 0,
-      delay: 1.5,          // Atraso antes da animação começar
-      stagger: 0.2,       // Intervalo entre a animação de cada letra
-      duration: 1.3,        // Duração da animação para cada letra
+      // delay: 1.5,          // Delay before animation starts
+      stagger: 0.2,       // Interval between each letter animation
       ease: "back.out(3)"
-    }
-  );
-
-  gsap.from(mainText2, {
-    duration: 2,
-    x: -200,
-    opacity: 0,
-    delay: 4,
-    ease: "power2.out"
-  })
+    }, "-=1.3")
+    .fromTo(h3Text2, 2, {
+      x: -200,
+      opacity: 0,
+    }, {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out"
+    }, "-=1.3")
+    .fromTo(h2Text2, 2, {
+      x: -200,
+      opacity: 0,
+    }, {
+      x: 0,
+      opacity: 1,
+      stagger: 0.4,
+      ease: "power2.out"
+    }, "-=1")
 
 })
 
@@ -109,7 +145,7 @@ buttonMenuMobile.addEventListener('click', toggleMenu)
 // Animated background on mouse hover
 let dots = [];
 const spacing = 15; // Spacing between dots
-const dotSize = 2;  // Size of the dots
+const dotSize = 3.5;  // Size of the dots
 const repelDistance = 80; // Distance at which dots are repelled
 let isMouseMoved = false; // Variable to track initial mouse movement
 
