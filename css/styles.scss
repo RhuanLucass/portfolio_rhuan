@@ -29,6 +29,9 @@ body {
   overflow-x: hidden;
 
   background-color: $black-dark;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove o destaque de toque */
+  // outline: none;
 }
 
 canvas {
@@ -151,11 +154,17 @@ img {
   width: 100%;
   @include spacing(px, 6);
   text-align: center;
+  @include typefaceBody(p2, mobile);
+  pointer-events: none;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  @include typefaceBody(p2, mobile);
+
+  .text-touch-mobile {
+    opacity: 0;
+  }
 
   .circles-wrapper {
     display: flex;
@@ -164,6 +173,7 @@ img {
     gap: 1.6rem;
 
     >span {
+      opacity: 0;
       display: inline-block;
       width: 40px;
       height: 40px;

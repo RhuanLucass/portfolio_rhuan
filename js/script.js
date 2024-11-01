@@ -87,30 +87,34 @@ window.addEventListener('DOMContentLoaded', function () {
       stagger: 0.4,
       ease: "power2.out"
     }, "-=1")
-    .fromTo(textTouchMobile, 1, {
+
+
+  if (isTouchDevice) {
+    tl.fromTo(textTouchMobile, 1, {
       opacity: 0,
     }, {
       opacity: 1,
-      ease: "power2.out",
+      // ease: "power2.out",
       repeat: 4,
       yoyo: true,
       onComplete: () => {
         gsap.to(textTouchMobile, { opacity: 0 });
       }
     }, "textTouch", "-=1")
-    .fromTo(circlesTouchMobile, 1, {
-      opacity: 0,
-      scale: .4
-    }, {
-      opacity: .7,
-      scale: 1,
-      ease: "power2.out",
-      repeat: 4,
-      yoyo: true,
-      onComplete: () => {
-        gsap.to(circlesTouchMobile, { opacity: 0 });
-      }
-    }, "textTouch-=0")
+      .fromTo(circlesTouchMobile, 1, {
+        opacity: 0,
+        scale: .6
+      }, {
+        opacity: .7,
+        scale: 1,
+        // ease: "power2.out",
+        repeat: 4,
+        yoyo: true,
+        onComplete: () => {
+          gsap.to(circlesTouchMobile, { opacity: 0 });
+        }
+      }, "textTouch-=0")
+  }
 
 })
 
@@ -122,8 +126,8 @@ function setFixedMainHeight() {
   main.style.height = `${window.innerHeight}px`
 }
 
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
 function setFixedMainHeightResize() {
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
   if (!isTouchDevice) {
     setFixedMainHeight()
   }
