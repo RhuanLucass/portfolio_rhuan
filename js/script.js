@@ -24,8 +24,18 @@ window.addEventListener('DOMContentLoaded', function () {
   // Create the gsap timeline
   const tl = gsap.timeline({
     onStart: disableScroll, // Disable scroll events on start
-    onComplete: enableScroll // Enable scroll events on complete
+    onComplete: () => {
+      enableScroll() // Enable scroll events on complete
+      tlInfinite.play() // Inicia a animação infinita
+
+      if (isTouchDevice) {
+        tlMobile.play();
+      }
+    }
   })
+
+  const tlInfinite = gsap.timeline({ paused: true })
+  const tlMobile = gsap.timeline({ paused: true })
 
   const header = document.querySelector('header')
   const h3Text1 = document.querySelector('.main-item-1 h3')
@@ -90,13 +100,14 @@ window.addEventListener('DOMContentLoaded', function () {
       ease: "power2.out",
       onComplete: enableScroll
     }, "-=1")
-    .fromTo(infiniteTextWrapper, 10, {
-      x: '130%',
-    }, {
-      x: '0%',
-      ease: 'linear'
-    }, '-=1')
-    .fromTo(infiniteText, 5, {
+
+  tlInfinite.fromTo(infiniteTextWrapper, 8, {
+    x: '130%',
+  }, {
+    x: '0%',
+    ease: 'linear'
+  }, '-=1')
+    .fromTo(infiniteText, 4, {
       x: '0%',
     }, {
       x: '-100%',
@@ -107,9 +118,9 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     })
 
-
   if (isTouchDevice) {
-    tl.fromTo(textTouchMobile, 1, {
+
+    tlMobile.fromTo(textTouchMobile, 1, {
       opacity: 0,
     }, {
       opacity: 1,

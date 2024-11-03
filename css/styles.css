@@ -465,6 +465,7 @@ main::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 800;
 }
 @media screen and (max-width: 1440px) {
   .main-item-3 {
