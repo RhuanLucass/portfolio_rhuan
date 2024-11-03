@@ -60,11 +60,29 @@ img {
 
 
 // MAIN
+main {
+  overflow: hidden;
+  height: 100vh;
+  max-height: 1080px;
+  min-height: 400px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25rem;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(1, 14, 30, 0) 50%, rgba(1, 14, 30, 1) 100%);
+  }
+}
 
 .hero {
   padding: 10vh 0 5vh;
-  height: 100vh;
-  max-height: 1080px;
+  height: 100%;
+
 
   display: flex;
   align-items: center;
@@ -73,7 +91,7 @@ img {
   gap: 20vh;
 
   position: relative;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   h3 {
     display: inline-block;
@@ -91,6 +109,10 @@ img {
   }
 
   @include responsive(l) {
+    &::after {
+      height: 15rem;
+    }
+
     h3 {
       padding-left: .4rem;
 
@@ -120,13 +142,8 @@ img {
   }
 }
 
-
-.main-text {
-  cursor: default;
-}
-
 .main-item-1 {
-  // opacity: 1;
+  cursor: default;
 
   @include spacing(pr, 6);
   align-self: flex-end;
@@ -142,6 +159,8 @@ img {
 }
 
 .main-item-2 {
+  cursor: default;
+
   @include spacing(pl, 6);
   align-self: flex-start;
 
@@ -151,6 +170,8 @@ img {
 }
 
 .main-item-3 {
+  cursor: default;
+
   width: 100%;
   @include spacing(px, 6);
   text-align: center;
@@ -183,5 +204,39 @@ img {
       background-color: $white-light;
 
     }
+  }
+}
+
+.infinite-text {
+  width: 40rem;
+
+  position: absolute;
+  bottom: 15%;
+  right: 0;
+  transform: rotate(-45deg);
+
+  .infinite-text-wrapper {
+    cursor: default;
+
+    white-space: nowrap;
+    display: flex;
+
+    pointer-events: none;
+
+    h3 {
+      padding: 0 .4rem;
+    }
+
+  }
+
+  @include responsive(l) {
+    // width: 50rem;
+    bottom: -.8rem;
+  }
+
+  @include responsive(s) {
+    width: 100%;
+    transform: translate(0);
+    margin-bottom: 3.2rem;
   }
 }

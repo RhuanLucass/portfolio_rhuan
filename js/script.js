@@ -33,6 +33,8 @@ window.addEventListener('DOMContentLoaded', function () {
   const h2Text2 = document.querySelectorAll('.main-item-2 h2')
   const textTouchMobile = document.querySelector('.text-touch-mobile')
   const circlesTouchMobile = document.querySelectorAll('.circles-wrapper span')
+  const infiniteTextWrapper = document.querySelector('.infinite-text-wrapper')
+  const infiniteText = infiniteTextWrapper.querySelectorAll('h3')
 
   const nameText = document.getElementById('name')
   const textContent = nameText.textContent;
@@ -85,8 +87,25 @@ window.addEventListener('DOMContentLoaded', function () {
       x: 0,
       opacity: 1,
       stagger: 0.4,
-      ease: "power2.out"
+      ease: "power2.out",
+      onComplete: enableScroll
     }, "-=1")
+    .fromTo(infiniteTextWrapper, 10, {
+      x: '130%',
+    }, {
+      x: '0%',
+      ease: 'linear'
+    }, '-=1')
+    .fromTo(infiniteText, 5, {
+      x: '0%',
+    }, {
+      x: '-100%',
+      ease: 'linear',
+      repeat: -1,
+      stagger: {
+        repeat: -1,
+      }
+    })
 
 
   if (isTouchDevice) {
@@ -95,7 +114,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }, {
       opacity: 1,
       // ease: "power2.out",
-      repeat: 4,
+      repeat: 3,
       yoyo: true,
       onComplete: () => {
         gsap.to(textTouchMobile, { opacity: 0 });
@@ -108,7 +127,7 @@ window.addEventListener('DOMContentLoaded', function () {
         opacity: .7,
         scale: 1,
         // ease: "power2.out",
-        repeat: 4,
+        repeat: 3,
         yoyo: true,
         onComplete: () => {
           gsap.to(circlesTouchMobile, { opacity: 0 });
@@ -121,22 +140,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 // // Setting fixed main height on page load
-const main = document.querySelector('main')
-function setFixedMainHeight() {
-  main.style.height = `${window.innerHeight}px`
-}
+// const main = document.querySelector('main')
+// function setFixedMainHeight() {
+//   main.style.height = `${window.innerHeight}px`
+// }
 
 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-function setFixedMainHeightResize() {
-  if (!isTouchDevice) {
-    setFixedMainHeight()
-  }
-  setFixedMainHeight()
-}
+// function setFixedMainHeightResize() {
+//   if (!isTouchDevice) {
+//     setFixedMainHeight()
+//   }
+//   setFixedMainHeight()
+// }
 
-window.addEventListener('load', setFixedMainHeight)
-window.addEventListener('resize', setFixedMainHeightResize)
-window.addEventListener('orientationchange', setFixedMainHeight);
+// window.addEventListener('load', setFixedMainHeight)
+// window.addEventListener('resize', setFixedMainHeightResize)
+// window.addEventListener('orientationchange', setFixedMainHeight);
 
 
 
@@ -144,7 +163,7 @@ window.addEventListener('orientationchange', setFixedMainHeight);
 const nav = document.getElementById('header')
 scrollHeader = () => {
 
-  if (this.scrollY >= 50) nav.classList.add('active-header')
+  if (this.scrollY >= 25) nav.classList.add('active-header')
   else nav.classList.remove('active-header')
 }
 

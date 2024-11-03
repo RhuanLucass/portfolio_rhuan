@@ -2,12 +2,12 @@ header {
   width: 100%;
   background-color: transparent;
   box-shadow: none;
-  // transition: .2s ease;
 
   position: fixed;
   z-index: 900;
 
   &.active-header {
+    transition: .3s ease;
     background-color: $black-dark;
     box-shadow: 0px 0px 60px -30px rgba(153, 183, 205, 0.90);
   }
