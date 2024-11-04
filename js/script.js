@@ -41,10 +41,10 @@ window.addEventListener('DOMContentLoaded', function () {
   const h3Text1 = document.querySelector('.main-item-1 h3')
   const h3Text2 = document.querySelector('.main-item-2 h3')
   const h2Text2 = document.querySelectorAll('.main-item-2 h2')
-  const textTouchMobile = document.querySelector('.text-touch-mobile')
+  const mainText3 = document.querySelector('.main-item-3')
   const circlesTouchMobile = document.querySelectorAll('.circles-wrapper span')
   const infiniteTextWrapper = document.querySelector('.infinite-text-wrapper')
-  const infiniteText = infiniteTextWrapper.querySelectorAll('h3')
+  const infiniteText = infiniteTextWrapper.querySelector('h3')
 
   const nameText = document.getElementById('name')
   const textContent = nameText.textContent;
@@ -101,26 +101,29 @@ window.addEventListener('DOMContentLoaded', function () {
       onComplete: enableScroll
     }, "-=1")
 
-  tlInfinite.fromTo(infiniteTextWrapper, 8, {
-    x: '130%',
+  tlInfinite.fromTo(infiniteTextWrapper, 25, {
+    x: '140%',
   }, {
-    x: '0%',
+    x: '-300%',
     ease: 'linear'
   }, '-=1')
-    .fromTo(infiniteText, 4, {
-      x: '0%',
-    }, {
-      x: '-100%',
-      ease: 'linear',
-      repeat: -1,
-      stagger: {
-        repeat: -1,
-      }
-    })
+  // .fromTo(infiniteText, 3, {
+  //   x: '0%',
+  // }, {
+  //   x: '-100%',
+  //   ease: 'linear',
+  //   // repeat: 1,
+  //   stagger: {
+  //     // repeat: 1,
+  //   },
+  //   onComplete: () => {
+  //     gsap.to(infiniteTextWrapper, 20, { x: '-260%' });
+  //   }
+  // })
 
   if (isTouchDevice) {
-
-    tlMobile.fromTo(textTouchMobile, 1, {
+    console.log('mobile')
+    tlMobile.fromTo(mainText3, 1.5, {
       opacity: 0,
     }, {
       opacity: 1,
@@ -128,20 +131,18 @@ window.addEventListener('DOMContentLoaded', function () {
       repeat: 3,
       yoyo: true,
       onComplete: () => {
-        gsap.to(textTouchMobile, { opacity: 0 });
+        gsap.to(mainText3, { opacity: 0 });
       }
     }, "textTouch", "-=1")
-      .fromTo(circlesTouchMobile, 1, {
-        opacity: 0,
+      .fromTo(circlesTouchMobile, 1.5, {
         scale: .6
       }, {
-        opacity: .7,
         scale: 1,
         // ease: "power2.out",
         repeat: 3,
         yoyo: true,
         onComplete: () => {
-          gsap.to(circlesTouchMobile, { opacity: 0 });
+          gsap.to(circlesTouchMobile, { opacity: 0 })
         }
       }, "textTouch-=0")
   }

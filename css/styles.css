@@ -163,9 +163,12 @@ header {
   box-shadow: none;
   position: fixed;
   z-index: 900;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 header.active-header {
-  transition: 0.3s ease;
+  transition: 0.5s ease;
   background-color: #010E1E;
   box-shadow: 0px 0px 60px -30px rgba(153, 183, 205, 0.9);
 }
@@ -355,6 +358,9 @@ main {
   max-height: 1080px;
   min-height: 400px;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 main::after {
   content: "";
@@ -374,7 +380,6 @@ main::after {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  gap: 20vh;
   position: relative;
 }
 .hero h3 {
@@ -453,6 +458,13 @@ main::after {
 
 .main-item-3 {
   cursor: default;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 50vw;
   width: 100%;
   padding-left: 8rem;
   padding-right: 8rem;
@@ -466,6 +478,9 @@ main::after {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 800;
+  background: rgba(1, 14, 30, 0.69);
+  background: radial-gradient(ellipse at center, rgba(1, 14, 30, 0.69) 0%, rgba(1, 14, 30, 0.69) 52%, rgba(1, 14, 30, 0) 85%, rgba(1, 14, 30, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010e1e", endColorstr="#010e1e", GradientType=1);
 }
 @media screen and (max-width: 1440px) {
   .main-item-3 {
@@ -473,8 +488,8 @@ main::after {
     padding-right: 4rem;
   }
 }
-.main-item-3 .text-touch-mobile {
-  opacity: 0;
+.main-item-3 .text-touch-mobile > p {
+  text-shadow: 0px 0px 20px #010E1E;
 }
 .main-item-3 .circles-wrapper {
   display: flex;
@@ -483,7 +498,6 @@ main::after {
   gap: 1.6rem;
 }
 .main-item-3 .circles-wrapper > span {
-  opacity: 0;
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -491,6 +505,7 @@ main::after {
   margin-top: 2.4rem;
   margin-bottom: 2.4rem;
   background-color: #FCFDFF;
+  box-shadow: 0px 0px 38px 34px rgba(1, 14, 30, 0.7137254902);
 }
 @media screen and (max-width: 1440px) {
   .main-item-3 .circles-wrapper > span {
@@ -509,11 +524,11 @@ main::after {
 .infinite-text .infinite-text-wrapper {
   cursor: default;
   white-space: nowrap;
-  display: flex;
   pointer-events: none;
 }
 .infinite-text .infinite-text-wrapper h3 {
   padding: 0 0.4rem;
+  color: #D2E4FB;
 }
 @media screen and (max-width: 1440px) {
   .infinite-text {
@@ -524,6 +539,6 @@ main::after {
   .infinite-text {
     width: 100%;
     transform: translate(0);
-    margin-bottom: 3.2rem;
+    bottom: 4.8rem;
   }
 }/*# sourceMappingURL=styles.css.map */
