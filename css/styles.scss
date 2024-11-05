@@ -85,7 +85,6 @@ main {
   padding: 10vh 0 5vh;
   height: 100%;
 
-
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -94,17 +93,17 @@ main {
   position: relative;
   // overflow-x: hidden;
 
-  h3 {
+  h4 {
     display: inline-block;
     line-height: 100%;
     padding-left: .6rem;
     position: relative;
 
-    &.h3-name {
+    &.h4-name {
       top: 1.6rem;
     }
 
-    &.h3-dev {
+    &.h4-dev {
       top: 1.3rem;
     }
   }
@@ -114,14 +113,14 @@ main {
       height: 15rem;
     }
 
-    h3 {
+    h4 {
       padding-left: .4rem;
 
-      &.h3-name {
+      &.h4-name {
         top: 1rem;
       }
 
-      &.h3-dev {
+      &.h4-dev {
         top: .8rem;
       }
     }
@@ -131,12 +130,12 @@ main {
     // max-height: 95vh;
     padding: 10vh 2.4rem 5vh;
 
-    h3 {
-      &.h3-name {
+    h4 {
+      &.h4-name {
         top: 1rem;
       }
 
-      &.h3-dev {
+      &.h4-dev {
         top: .8rem;
       }
     }
@@ -257,5 +256,93 @@ main {
     width: 100%;
     transform: translate(0);
     bottom: 4.8rem;
+  }
+}
+
+
+
+// WORKS
+#works {
+  width: 100%;
+  padding: 16rem 0 8rem;
+
+  >h3 {
+    text-align: end;
+    padding-right: 8rem;
+  }
+
+  .projects-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .project-single {
+      padding: 2.4rem;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6.4rem;
+
+      .image-container-project {
+        width: 100%;
+        max-width: 60rem;
+        aspect-ratio: 1.5/1;
+        overflow: hidden;
+
+        >img {
+          border-radius: 8px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .description-project {
+        width: 100%;
+        max-width: 80rem;
+        text-align: center;
+
+        >.title-project {
+          padding-bottom: 2.4rem;
+        }
+
+        >.text-project {
+          @include typefaceBody(p3, desktop)
+        }
+      }
+    }
+  }
+
+  @include responsive(l) {
+    padding: 8rem 0;
+
+    .projects-wrapper {
+      .project-single {
+        gap: 4rem;
+
+        .image-container-project {
+          max-width: 40rem;
+        }
+
+        .description-project {
+          max-width: 60rem;
+
+          >.title-project {
+            padding-bottom: 1.6rem;
+          }
+        }
+      }
+
+    }
+
   }
 }

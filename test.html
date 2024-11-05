@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efeito de Dispersão com p5.js</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #222;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Incluindo p5.js a partir de CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script>
+    let dots = [];
+    const spacing = 15; // Espaçamento entre as bolinhas
+    const dotSize = 2;  // Tamanho das bolinhas
+    const repelDistance = 80; // Distância de dispersão das bolinhas
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      for (let x = 0; x < width; x += spacing) {
+        for (let y = 0; y < height; y += spacing) {
+          dots.push({ x: x, y: y, baseX: x, baseY: y, isRepelled: false });
+        }
+      }
+    }
+
+    function draw() {
+      background(34); // Fundo escuro
+      noStroke();
+      fill(255); // Cor das bolinhas
+
+      dots.forEach(dot => {
+        const distance = dist(mouseX, mouseY, dot.baseX, dot.baseY);
+        if (distance < repelDistance) {
+          dot.isRepelled = true;
+          const angle = atan2(dot.baseY - mouseY, dot.baseX - mouseX);
+          dot.x = lerp(dot.x, dot.baseX + cos(angle) * repelDistance, 0.2);
+          dot.y = lerp(dot.y, dot.baseY + sin(angle) * repelDistance, 0.2);
+        } else if (dot.isRepelled) {
+          dot.x = lerp(dot.x, dot.baseX, 0.1);
+          dot.y = lerp(dot.y, dot.baseY, 0.1);
+          if (abs(dot.x - dot.baseX) < 0.1 && abs(dot.y - dot.baseY) < 0.1) {
+            dot.isRepelled = false; // Para de mover quando está na posição original
+          }
+        }
+        ellipse(dot.x, dot.y, dotSize);
+      });
+    }
+
+    // Ajusta a tela conforme a janela do navegador muda
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      dots = [];
+      for (let x = 0; x < width; x += spacing) {
+        for (let y = 0; y < height; y += spacing) {
+          dots.push({ x: x, y: y, baseX: x, baseY: y, isRepelled: false });
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -18,6 +18,11 @@
 
   // H3
   @if $size ==h3 {
+    font-size: clamp(3.2rem, 2vw + 1rem, 4.8em);
+    line-height: 100%;
+  }
+
+  @if $size ==h4 {
     font-size: clamp(2.4rem, 1.5vw + .5rem, 3.2em);
     line-height: 100%;
   }
@@ -91,6 +96,11 @@ h2 {
 h3 {
   color: $white-light;
   @include typefaceTitle(h3);
+}
+
+h4 {
+  color: $white-light;
+  @include typefaceTitle(h4);
 }
 
 
