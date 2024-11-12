@@ -277,3 +277,73 @@ buttonMenuMobile.addEventListener('click', toggleMenu)
 //   }
 // }
 
+
+
+// Works animation with scrollTrigger
+
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.utils.toArray(".project-single").forEach((project, index, projects) => {
+  // Animação de entrada com scrub
+  // gsap.fromTo(project,
+  //   {
+  //     // x: '50%',
+  //     // y: '50%',
+  //     scale: 0.4,
+  //   },
+  //   {
+  //     // x: '0',
+  //     // y: '0',
+  //     scale: 1,
+  //     scrollTrigger: {
+  //       markers: true,
+  //       trigger: project,
+  //       start: "top 80%",
+  //       end: "center center",
+  //       scrub: 2,
+  //       pin: true,
+  //     },
+  //   }
+  // )
+
+  const tlWorks = gsap.timeline({
+    scrollTrigger: {
+      markers: true,
+      trigger: project,
+      start: "50% 50%",
+      end: "bottom 0%",
+      scrub: 2.5,
+      pin: true,
+      // pinSpacing: true
+    }
+  })
+
+  tlWorks.fromTo(project, {
+    scale: 0.4,
+    y: '50%',
+    x: '50%'
+  }, {
+    scale: 1,
+    y: '0%',
+    x: '0%'
+  })
+    .to(project, {
+      scale: 1,
+      y: '0%',
+      x: '0%'
+    })
+    .fromTo(project, {
+      scale: 1,
+      y: '0%',
+      x: '0%'
+    }, {
+      scale: 0.4,
+      y: '-50%',
+      x: '-50%'
+    })
+    .to(project, {
+      scale: 0.4,
+      y: '-60%',
+      x: '-60%'
+    })
+})

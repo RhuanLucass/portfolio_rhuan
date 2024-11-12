@@ -558,6 +558,8 @@ main::after {
 #works > h3 {
   text-align: end;
   padding-right: 8rem;
+  position: sticky;
+  top: 16rem;
 }
 #works .projects-wrapper {
   width: 100%;
@@ -612,6 +614,7 @@ main::after {
   }
   #works .projects-wrapper .project-single {
     gap: 4rem;
+    transform-origin: center center;
   }
   #works .projects-wrapper .project-single .image-container-project {
     max-width: 40rem;
