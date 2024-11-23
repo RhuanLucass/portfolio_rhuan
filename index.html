@@ -6,124 +6,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#010E1E">
 
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Viaoda+Libre&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Viaoda+Libre&family=Whisper&display=swap"
     rel="stylesheet">
-
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
   <link rel="stylesheet" href="css/styles.css">
 
   <title>Portfolio | Rhuan Lucas</title>
 
   <script src="js/svg-inject.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header id="header">
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="logo"><img src="assets/svg/logo.svg"
-          alt="Logo with the letters R and L joined together representing the initials of Rhuan Lucas"
-          onload="SVGInject(this)"></div>
-      <div class="navbar-item">
-        <div class="menu-mobile">
-          <span></span>
+  <div id="wrapper">
+    <div id="content">
+
+      <!-- HEADER -->
+      <header id="header">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+          <div class="logo"><img src="assets/svg/logo.svg"
+              alt="Logo with the letters R and L joined together representing the initials of Rhuan Lucas"
+              onload="SVGInject(this)"></div>
+          <div class="navbar-item">
+            <div class="menu-mobile">
+              <span></span>
+            </div>
+
+            <div class="menu-desktop">
+              <ul>
+                <li class="menu-item"><a href="" class="nav-link-desktop active-menu"><span>Home</span></a></li>
+                <li class="menu-item"><a href="" class="nav-link-desktop">Works</a></li>
+                <li class="menu-item"><a href="" class="nav-link-desktop">About</a></li>
+                <li class="menu-item"><a href="" class="nav-link-desktop">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- MAIN -->
+      <main>
+        <div class="container hero">
+          <div id="main-text-container">
+            <h3 id="initial-text">I'M</h3>
+            <h1 id="name-text">RHUAN LUCAS</h1>
+          </div>
+          <h2 class="font-whisper" id="work-text">A front-end developer</h>
+
+            <div class="main-text main-item-3">
+              <p class="text-touch-mobile">Toque com dois dedos para interagir com o fundo</p>
+              <div class="circles-wrapper">
+                <span class="circle-1"></span>
+                <span class="circle-2"></span>
+              </div>
+            </div>
+            <div class="infinite-text">
+              <div class="infinite-text-wrapper">
+                <h2> OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK </h2>
+              </div>
+            </div>
+      </main>
+
+      <section id="works" class="container">
+        <h2 class="title-works">WORKS</h2>
+
+        <div class="projects-wrapper">
+          <div class="project-single">
+            <div class="image-container-project">
+              <img src="assets/img/nu-bank.png" alt="">
+            </div>
+            <div class="description-project">
+              <h4 class="title-project">Project 1</h4>
+              <p class="text-project">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, fugit.
+                Earum fugiat delectus ut quae ea optio explicabo qui, voluptatibus consequatur nam sequi, repellat
+                beatae!
+                Quia modi sed sequi rerum?</p>
+            </div>
+          </div>
+
+          <div class="project-single">
+            <div class="image-container-project">
+              <img src="assets/img/nu-bank.png" alt="">
+            </div>
+            <div class="description-project">
+              <h4 class="title-project">Project 1</h4>
+              <p class="text-project">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, fugit.
+                Earum fugiat delectus ut quae ea optio explicabo qui, voluptatibus consequatur nam sequi, repellat
+                beatae!
+                Quia modi sed sequi rerum?</p>
+            </div>
+          </div>
+
+          <div class="project-single">
+            <div class="image-container-project">
+              <img src="assets/img/nu-bank.png" alt="">
+            </div>
+            <div class="description-project">
+              <h4 class="title-project">Project 1</h4>
+              <p class="text-project">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, fugit.
+                Earum fugiat delectus ut quae ea optio explicabo qui, voluptatibus consequatur nam sequi, repellat
+                beatae!
+                Quia modi sed sequi rerum?</p>
+            </div>
+          </div>
         </div>
-
-        <div class="menu-desktop">
-          <ul>
-            <li class="menu-item"><a href="" class="nav-link-desktop active-menu"><span>Home</span></a></li>
-            <li class="menu-item"><a href="" class="nav-link-desktop">Works</a></li>
-            <li class="menu-item"><a href="" class="nav-link-desktop">About</a></li>
-            <li class="menu-item"><a href="" class="nav-link-desktop">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main>
-    <div class="container hero">
-      <div class="main-text main-item-1">
-        <h4 class="h4-name">I'M</h4>
-        <h1 id="name">RHUAN LUCAS</h1>
-      </div>
-
-      <div class="main-text main-item-2">
-        <h4 class="h4-dev">A</h4>
-        <h2>FRONT-END</h2>
-        <h2>DEVELOPER</h2>
-      </div>
+      </section>
+      <section id="about" style="height: 1000px;"></section>
     </div>
-
-    <div class="main-text main-item-3">
-      <p class="text-touch-mobile">Toque com dois dedos para interagir com o fundo</p>
-      <div class="circles-wrapper">
-        <span class="circle-1"></span>
-        <span class="circle-2"></span>
-      </div>
-    </div>
-    <div class="infinite-text">
-      <div class="infinite-text-wrapper">
-        <h4> OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK • OPEN TO WORK </h4>
-      </div>
-    </div>
-  </main>
-
-  <section id="works" class="container">
-    <h3 class="title-works">WORKS</h3>
-
-    <div class="projects-wrapper">
-      <div class="project-single">
-        <div class="image-container-project">
-          <img src="assets/img/nu-bank.png" alt="">
-        </div>
-        <div class="description-project">
-          <h4 class="title-project">Project 1</h4>
-          <p class="text-project">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, fugit.
-            Earum fugiat delectus ut quae ea optio explicabo qui, voluptatibus consequatur nam sequi, repellat beatae!
-            Quia modi sed sequi rerum?</p>
-        </div>
-      </div>
-
-      <div class="project-single">
-        <div class="image-container-project">
-          <img src="assets/img/nu-bank.png" alt="">
-        </div>
-        <div class="description-project">
-          <h4 class="title-project">Project 1</h4>
-          <p class="text-project">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, fugit.
-            Earum fugiat delectus ut quae ea optio explicabo qui, voluptatibus consequatur nam sequi, repellat beatae!
-            Quia modi sed sequi rerum?</p>
-        </div>
-      </div>
-
-      <div class="project-single">
-        <div class="image-container-project">
-          <img src="assets/img/nu-bank.png" alt="">
-        </div>
-        <div class="description-project">
-          <h4 class="title-project">Project 1</h4>
-          <p class="text-project">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, fugit.
-            Earum fugiat delectus ut quae ea optio explicabo qui, voluptatibus consequatur nam sequi, repellat beatae!
-            Quia modi sed sequi rerum?</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div style="height: 1000px;"></div>
+  </div>
 
   <script src="js/script.js"></script>
+  <script src="js/dotsBackground.js"></script>
+  <script src="js/gsap.js"></script>
 </body>
 
 </html>

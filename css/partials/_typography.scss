@@ -6,24 +6,24 @@
 
   // H1
   @if $size ==h1 {
-    font-size: clamp(8rem, 8vw + 1rem, 15.2em);
+    font-size: 11vw;
     line-height: 100%;
   }
 
   // H2
   @if $size ==h2 {
-    font-size: clamp(5.6rem, 6vw + 1rem, 14.4em);
+    font-size: 3.5vw;
     line-height: 100%;
   }
 
   // H3
   @if $size ==h3 {
-    font-size: clamp(3.2rem, 2vw + 1rem, 4.8em);
+    font-size: 1.5vw;
     line-height: 100%;
   }
 
   @if $size ==h4 {
-    font-size: clamp(2.4rem, 1.5vw + .5rem, 3.2em);
+    font-size: 1vw;
     line-height: 100%;
   }
 }
@@ -116,6 +116,12 @@ p {
   @include responsive(s) {
     @include typefaceBody(p2, mobile);
   }
+}
+
+.font-whisper {
+  font-family: "Whisper", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .bold {

@@ -63,90 +63,49 @@ img {
 main {
   overflow: hidden;
   height: 100vh;
-  max-height: 1080px;
-  min-height: 400px;
   position: relative;
 
   user-select: none;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 25rem;
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(1, 14, 30, 0) 50%, rgba(1, 14, 30, 1) 100%);
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 25rem;
+  //   pointer-events: none;
+  //   background: linear-gradient(to bottom, rgba(1, 14, 30, 0) 50%, rgba(1, 14, 30, 1) 100%);
+  // }
 }
 
 .hero {
-  padding: 10vh 0 5vh;
+  @include spacing(px, 6);
   height: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
+  gap: 2vw;
 
   position: relative;
-  // overflow-x: hidden;
-
-  h4 {
-    display: inline-block;
-    line-height: 100%;
-    padding-left: .6rem;
-    position: relative;
-
-    &.h4-name {
-      top: 1.6rem;
-    }
-
-    &.h4-dev {
-      top: 1.3rem;
-    }
-  }
-
-  @include responsive(l) {
-    &::after {
-      height: 15rem;
-    }
-
-    h4 {
-      padding-left: .4rem;
-
-      &.h4-name {
-        top: 1rem;
-      }
-
-      &.h4-dev {
-        top: .8rem;
-      }
-    }
-  }
-
-  @include responsive(s) {
-    // max-height: 95vh;
-    padding: 10vh 2.4rem 5vh;
-
-    h4 {
-      &.h4-name {
-        top: 1rem;
-      }
-
-      &.h4-dev {
-        top: .8rem;
-      }
-    }
-  }
 }
 
-.main-item-1 {
+#main-text-container {
   cursor: default;
+  margin: 0 auto;
+  position: relative;
 
-  @include spacing(pr, 6);
-  align-self: flex-end;
+  #initial-text {
+    position: relative;
+    left: .5vw;
+    // opacity: 0;
+  }
+
+  #name-text {
+    line-height: 80%;
+  }
 
   @include responsive(s) {
     padding-right: 0;
@@ -158,10 +117,14 @@ main {
   }
 }
 
+#work-text {
+  text-align: center;
+  // opacity: 0;
+}
+
 .main-item-2 {
   cursor: default;
 
-  @include spacing(pl, 6);
   align-self: flex-start;
 
   @include responsive(s) {
@@ -265,7 +228,7 @@ main {
 // WORKS
 #works {
   width: 100%;
-  padding: 16rem 0 8rem;
+  padding: 8rem 0;
 
   >h3 {
     text-align: end;
